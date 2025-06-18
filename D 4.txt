@@ -1,0 +1,113 @@
+	
+#include<iostream>
+using namespace std;
+int main(){
+    int a=10;
+   int sum =(++a)+(a*3)+(a--)+(--a)+(a--);
+   cout<<sum<<" "<<a;
+} 
+
+
+ChatGPT said:
+Let's go through the C++ code step by step to understand the output.
+
+cpp
+Copy
+Edit
+#include<iostream>
+using namespace std;
+int main(){
+    int a=10;
+    int sum =(++a)+(a*3)+(a--)+(--a)+(a--);
+    cout<<sum<<" "<<a;
+}
+Step-by-Step Evaluation:
+Initial value:
+
+ini
+Copy
+Edit
+a = 10
+Now evaluating the expression:
+
+cpp
+Copy
+Edit
+sum = (++a) + (a*3) + (a--) + (--a) + (a--);
+Let’s break it down one by one from left to right, keeping in mind C++ sequence points and operator precedence. The expression is evaluated left to right, but side effects (like increment or decrement) may not take effect immediately depending on how the compiler interprets it. However, for a clear understanding, we assume sequential evaluation for each operand.
+
+1. ++a
+Pre-increment: a becomes 11
+
+Value used: 11
+
+2. a * 3
+a is still 11
+
+Value: 11 * 3 = 33
+
+3. a--
+Post-decrement: a is 11, then becomes 10
+
+Value used: 11
+
+4. --a
+Pre-decrement: a becomes 9
+
+Value used: 9
+
+5. a--
+Post-decrement: a is 9, then becomes 8
+
+Value used: 9
+
+Now calculate sum:
+
+ini
+Copy
+Edit
+sum = 11 + 33 + 11 + 9 + 9 = 73
+Final value of a is 8.
+
+✅ Output:
+Copy
+Edit
+73 8
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n; // Input the number of students
+
+    int handshakes = 0;
+
+    // Loop through each student
+    for (int i = 1; i <= n; i++) {
+        // Each student shakes hands with those who come after them
+        for (int j = i + 1; j <= n; j++) {
+            handshakes++; // Count the handshake
+        }
+    }
+
+    cout << handshakes << endl; // Output the total handshakes
+
+    return 0;
+}
